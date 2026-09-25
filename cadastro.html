@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro - ONG</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+
+        <h1>Cadastro</h1>
+
+</header>
+
+    <main id="conteudo-principal">
+
+<form>
+
+    <div class="alerta" role="alert">Os campos marcados como obrigatórios devem ser preenchidos antes do envio.</div>
+
+    <fieldset>
+    
+<legend class="visualmente-oculto">Dados Pessoais</legend>
+
+    <p class="titulo-fieldset" aria-hidden="true">Dados Pessoais</p>
+    <div class="campo-formulario">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div class="campo-formulario">
+        <label for="nascimento">Data de Nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+    </div>
+
+    <div class="campo-formulario">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" placeholder="Ex: 123.456.789-00">
+    </div>
+
+    <div class="campo-formulario">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="campo-formulario">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone"
+        pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="Ex: 11-91234-5678">
+    </div>
+    </fieldset>
+
+    <fieldset>
+        
+<legend class="visualmente-oculto">Informações Adicionais</legend>
+
+    <p class="titulo-fieldset" aria-hidden="true">Informações Adicionais</p>
+
+        <div class="campo-formulario">
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+        </div>
+
+        <div class="campo-formulario">
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep"
+        pattern="[0-9]{5}-[0-9]{3}" placeholder="Ex: 12345-678">
+        </div>
+
+        <div class="campo-formulario">
+         <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade">
+        </div>
+
+        <div class="campo-formulario">
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado">
+        </div>
+     
+    </fieldset>
+
+    
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+
+    <div id="toast-sucesso" class="toast" role="status" aria-livre="polite">
+        Cadastro enviado com sucesso!
+    
+    <a href="#" arial-label="Fechar mensagem">x</a>
+    </div>
+
+   </main>
+
+    <footer>
+    
+    <div class="footer-conteudo">
+
+        <div class="footer-bloco">
+    <h2>Redes sociais</h2>
+    <a href="https://www.facebook.com/ong" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.instagram.com/ong" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+
+    <div class="footer-bloco">
+    <h2>Localização</h2>
+    <p>Rua Exemplo, 123 - Cidade, Estado</p>
+    </div>
+
+    <div class="footer-bloco">
+    <h2>Contato</h2>
+    <p>E-mail: contato@ong.org</p>
+    </div>
+
+  </div>  
+</footer>
+ 
+<script type="module"src="js/main.js"></script>
+
+</body>
+
+</html>
