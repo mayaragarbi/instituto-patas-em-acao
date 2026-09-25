@@ -16,3 +16,11 @@ Projeto acadêmico desenvolvido para praticar HTML5 semântico.
 - Página inicial
 - Projetos
 - Cadastro
+
+## Estratégia de versionamento
+
+O projeto utiliza uma estrutura baseada no GitFlow:
+
+- master: mantém a versão estável do projeto.
+- develop: concentra as alterações em desenvolvimento.
+- feature/: utilizada para desenvolver funcionalidades ou alterações específicas de forma isolada.
