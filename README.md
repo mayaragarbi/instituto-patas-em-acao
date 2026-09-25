@@ -24,3 +24,8 @@ O projeto utiliza uma estrutura baseada no GitFlow:
 - master: mantém a versão estável do projeto.
 - develop: concentra as alterações em desenvolvimento.
 - feature/: utilizada para desenvolver funcionalidades ou alterações específicas de forma isolada.
+
+## Versionamento semântico
+
+As versões do projeto seguem o padrão MAJOR.MINOR.PATCH.
+A versão 1.0.0 representa a primeira versão estável da aplicação.
