@@ -5,9 +5,11 @@
     /*CORES*/
     --cor-primaria: #28332f;
     --cor-primaria-clara: #3f514a;
+    --cor-primaria-escura: #1e2724;
 
     --cor-secundaria: #5e4b63;
     --cor-secundaria-clara: #806a85;
+    --cor-secundaria-escura: #49394d;
 
     --cor-destaque: #c98f8d;
 
@@ -21,6 +23,8 @@
 
     --cor-sucesso: #5f8067;
     --cor-erro: #b85c5c;
+    --cor-aviso: #b7791f;
+
 
 
     /*TIPOGRAFIA*/
@@ -249,12 +253,12 @@ footer a:hover {
 /*Página de projetos*/
 
 .projeto-card {
+    flex: 1 1 350px;
     background-color: var(--cor-superficie);
     padding: var(--espacamento-lg);
     border-radius: var(--border-radius);
     border: 1px solid var(--cor-borda);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    
 }
 
 .projeto-card h2 {
@@ -288,15 +292,6 @@ footer a:hover {
     display: flex;
     gap: var(--espacamento-lg);
     flex-wrap: wrap;
-}
-
-.projeto-card {
-    flex: 1 1 350px;
-    background-color: var(--cor-superficie);
-    padding: var(--espacamento-lg);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--cor-borda); 
-    box-shadow: 0 4px 15px rgba (0, 0, 0, 0.05);
 }
 
 .badge {
@@ -341,7 +336,7 @@ footer a:hover {
     margin: 0 auto;
     padding: var(--espacamento-sm) var(--espacamento-md);
     background-color: var(--cor-superficie);
-    border-left: 4px solid var(--cor-destaque);
+    border-left: 4px solid var(--cor-aviso);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
 
