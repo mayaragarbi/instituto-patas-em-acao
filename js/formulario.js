@@ -4,7 +4,7 @@ export function iniciarFormulario() {
 
         const campo = evento.target;
 
-        if(!campo.matches("form input")) {
+        if (!campo.matches("form input")) {
             return;
         }
 
@@ -14,16 +14,15 @@ export function iniciarFormulario() {
                 "campo-invalido"
             );
 
-            return
-
+            return;
         }
 
-        if (campo.checkValidity ()) {
+        if (campo.checkValidity()) {
             campo.classList.add("campo-valido");
-            campo.class.List.remove("campo-invalido");
-        }else {
-            campo.classList.add("campo-invalido");
             campo.classList.remove("campo-invalido");
+        } else {
+            campo.classList.add("campo-invalido");
+            campo.classList.remove("campo-valido");
         }
     });
 
@@ -31,7 +30,7 @@ export function iniciarFormulario() {
 
         const formulario = evento.target;
 
-        if(!formualario.matches("form")) {
+        if (!formulario.matches("form")) {
             return;
         }
 
@@ -42,10 +41,12 @@ export function iniciarFormulario() {
             return;
         }
 
-        const toast = document.querySelector("#toast-sucesso");
+        const toast =
+            document.querySelector("#toast-sucesso");
 
         if (toast) {
             toast.classList.add("mostrar");
+
             setTimeout(function () {
                 toast.classList.remove("mostrar");
             }, 3000);
@@ -54,13 +55,13 @@ export function iniciarFormulario() {
         formulario.reset();
 
         formulario
-        .querySelectorAll("input")
-        .forEach(function (campo) {
+            .querySelectorAll("input")
+            .forEach(function (campo) {
 
-            campo.classList.remove(
-                "campo-valido",
-                "campo-invalido"
-            );
+                campo.classList.remove(
+                    "campo-valido",
+                    "campo-invalido"
+                );
+            });
     });
-});
 }

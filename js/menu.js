@@ -1,11 +1,13 @@
 export function iniciarMenu() {
+
     document.addEventListener("change", function (evento) {
 
         if (!evento.target.matches(".menu-toggle")) {
             return;
         }
 
-        const menuHambuguer = this.documentElement.querySelector(".menu.hamburguer");
+        const menuHamburguer =
+            document.querySelector(".menu-hamburguer");
 
         if (menuHamburguer) {
             menuHamburguer.setAttribute(
@@ -16,10 +18,13 @@ export function iniciarMenu() {
     });
 }
 
-export function fecharMenu(){
-    const menuToggle = document.querySelector(".menu-Toggle");
+export function fecharMenu() {
 
-    const menuHamburguer = document.querySelector(".menu-hamburguer");
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const menuHamburguer =
+        document.querySelector(".menu-hamburguer");
 
     if (menuToggle) {
         menuToggle.checked = false;

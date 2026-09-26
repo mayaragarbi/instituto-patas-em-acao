@@ -1,7 +1,7 @@
 import { renderizarCampanhas } from "./campanhas.js";
 import { fecharMenu } from "./menu.js";
 
-const paginasInternas= [
+const paginasInternas = [
     "index.html",
     "projetos.html",
     "cadastro.html"
@@ -30,7 +30,13 @@ export function iniciarNavegacao() {
 
 function tratarCliqueNavegacao(evento) {
 
-    const pagine = link.getAttribute("href");
+    const link = evento.target.closest("a");
+
+    if (!link) {
+        return;
+    }
+
+    const pagina = link.getAttribute("href");
 
     if (!paginasInternas.includes(pagina)) {
         return;
@@ -44,7 +50,7 @@ function tratarCliqueNavegacao(evento) {
 }
 
 async function carregarPagina(
-    pagina, 
+    pagina,
     adicionarHistorico = true
 ) {
 
@@ -52,7 +58,7 @@ async function carregarPagina(
 
         const resposta = await fetch(pagina);
 
-        if(!resposta.ok) {
+        if (!resposta.ok) {
             throw new Error(
                 "Não foi possível carregar a página."
             );
@@ -62,9 +68,13 @@ async function carregarPagina(
 
         const parser = new DOMParser();
 
-        const documento = parser.parseFromString(html, "text/html");
+        const documento = parser.parseFromString(
+            html,
+            "text/html"
+        );
 
-        const novoConteudo = documento.querySelector("#onteudo-principal");
+        const novoConteudo =
+            documento.querySelector("#conteudo-principal");
 
         if (!novoConteudo) {
             throw new Error(
@@ -72,32 +82,36 @@ async function carregarPagina(
             );
         }
 
-        conteudoPrincipal.innerHtml = novoConteudo.innerHtml;
+        conteudoPrincipal.innerHTML =
+            novoConteudo.innerHTML;
 
-        document.title = document.title;
+        document.title = documento.title;
 
         renderizarCampanhas();
 
         if (adicionarHistorico) {
-            history.pushState({},"", pagina);
+            history.pushState({}, "", pagina);
         }
 
         window.scrollTo(0, 0);
 
-    }catch (erro) {
+    } catch (erro) {
+
         console.error(erro);
 
-        conteudoPrincipal.innerHtml = `
-        <section>
-        <h2>Erro ao carregar a página. </h2>
-        </section>
+        conteudoPrincipal.innerHTML = `
+            <section>
+                <h2>Erro ao carregar a página.</h2>
+            </section>
         `;
     }
 }
 
 function tratarHistorico() {
 
-    const paginaAtual = window.location.pathname.split("/").pop() || "index.html";
+    const paginaAtual =
+        window.location.pathname.split("/").pop()
+        || "index.html";
 
     carregarPagina(paginaAtual, false);
 }
