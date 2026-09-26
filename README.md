@@ -27,6 +27,8 @@ O projeto simula o site de uma ONG voltada ao resgate e cuidado de cães e gatos
 - Media Queries
 - Web Storage API
 - ES6 Modules
+- Vite
+- html-minifier-terser
 
 ## Estrutura do projeto
 
@@ -43,6 +45,45 @@ O projeto foi organizado separando os arquivos de acordo com suas responsabilida
 - `js/formulario.js` — eventos e validação do formulário
 - `js/menu.js` — comportamento do menu mobile
 - `js/storage.js` — persistência de dados com localStorage
+- `vite.config.js` — configuração da build de produção
+- `package.json` — dependências e scripts do projeto
+- `package-lock.json` — registro das versões das dependências
+- `.gitignore` — arquivos e diretórios ignorados pelo Git
+
+## Execução do projeto
+
+Para executar o projeto em ambiente de desenvolvimento é necessário ter o Node.js instalado.
+
+Após clonar o repositório, instale as dependências:
+
+```bash
+npm install
+
+Para iniciar o servidor de desenvolvimento:
+
+```bash
+npm run dev
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+
+Para visualizar a versão de produção localmente:
+```bash
+npm run preview
+```
+
+## Build e minificação
+O projeto utiliza o Vite como ferramenta de build.
+Durante a geração da versão de produção, os arquivos JavaScript e CSS são minificados pelo processo de build do Vite. Para a minificação dos arquivos HTML foi utilizado o html-minifier-terser, integrado à configuração do Vite.
+A comparação entre os arquivos-fonte e a versão de produção apresentou os seguintes resultados:
+- HTML: 8.455 bytes para 6.788 bytes — redução de aproximadamente 19,72%
+- CSS: 11.616 bytes para 7.732 bytes — redução de aproximadamente 33,44%
+- JavaScript: 6.386 bytes para 3.601 bytes — redução de aproximadamente 43,61%
+- Total: 26.457 bytes para 18.121 bytes — redução de aproximadamente 31,51%
+
+Após a build, a aplicação foi testada utilizando o servidor de preview do Vite. A navegação SPA, a geração das campanhas e a validação do formulário continuaram funcionando normalmente após a minificação.
 
 ## Design System
 
@@ -113,6 +154,9 @@ Exemplos:
 - `docs:` para documentação
 - `refactor:` para reorganizações de código
 
+```md
+- `build:` para alterações relacionadas ao processo de build e dependências
+
 ## Versionamento semântico
 
 As versões seguem o padrão:
@@ -127,4 +171,4 @@ A versão `v1.0.0` representa a primeira versão estável da aplicação.
 
 ## Objetivo acadêmico
 
-O projeto foi desenvolvido com o objetivo de praticar a construção de uma aplicação front-end completa, passando pela estruturação semântica, estilização responsiva, interatividade com JavaScript, manipulação do DOM, armazenamento local, depuração e versionamento com Git.
+O projeto foi desenvolvido com o objetivo de praticar a construção de uma aplicação front-end completa, passando pela estruturação semântica, estilização responsiva, interatividade com JavaScript, manipulação do DOM, armazenamento local, depuração, otimização de arquivos, build de produção e versionamento com Git.
